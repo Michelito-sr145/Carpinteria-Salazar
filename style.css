@@ -1,0 +1,654 @@
+﻿:root{
+    --ink: #282019;
+    --paper: rgba(179, 154, 127, 0.5);
+    --line: #ffd035;
+    --text-primary: #ffffff;
+    --text-oscuro: #000000;
+    --madera: #573821;
+    --madera2: #402817;
+    --madera2-trans: rgba(64, 40, 23, 0.65);
+    --madera3: #8f5028;
+}
+
+.header {
+    color: var(--text-primary);
+    background: var(--madera2-trans);
+    border-bottom: 1px solid var(--line);
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #2b140900;
+    background-image: url("resource/Imagen/Fondo_de_Pagina.png");
+    background-position: center top;
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    display: flex;
+    flex-direction: column;
+}
+
+.header-inner {
+    margin-inline: auto;
+    padding-inline: clamp(0.875rem, 5vw, 2rem);
+}
+
+.header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 0.6rem;
+    
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    color: inherit;
+    text-decoration: none;
+}
+
+.brand img {
+    display: block;
+    inline-size: 7rem;
+}
+
+
+.menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-block-size: 2.75rem;
+    padding-inline: 0.625rem;
+    border: 1px solid var(--line);
+    border-radius: 0.375rem;
+    background: var(--madera3);
+    color: var(--text-primary);
+    font: 600 0.8125rem system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.menu-icon {
+    inline-size: 0.875rem;
+    block-size: 0.625rem;
+    box-sizing: border-box;
+    border-block: 2px solid currentColor;
+}
+
+.menu-toggle[aria-expanded="true"] {
+    background: var(--line);
+    color: var(--text-oscuro);
+}
+
+.header-nav {
+    display: grid;
+    gap: 0.25rem;
+    padding-block: 0.5rem 0.875rem;
+    border-top: 1px solid var(--line);
+}
+
+.menu-toggle[hidden],
+.header-nav[hidden] {
+    display: none;
+}
+
+.header-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-block-size: 2.75rem;
+    padding-inline: 0.75rem;
+    border-radius: 0.375rem;
+    color: inherit;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.header-nav a:hover {
+    background: var(--line);
+    color: var(--text-oscuro);
+}
+
+.header-nav .nav-contact {
+    background: var(--madera3);
+}
+
+.header-nav .nav-contact:hover {
+    background: var(--line);
+    color: var(--text-oscuro);
+}
+
+.header :focus-visible {
+    outline: 2px solid var(--line);
+    outline-offset: 3px;
+}
+
+/*------------------ PRESENTACION ------------------*/
+
+.presentacion {
+    display: grid;
+    gap: 1.5rem;
+    inline-size: min(32rem, calc(100% - 2 * clamp(0.875rem, 5vw, 2rem)));
+    margin: 1rem auto;
+    padding: clamp(1.25rem, 6vw, 2rem);
+    box-sizing: border-box;
+    border: 1px solid var(--line);
+    border-radius: 0.875rem;
+    background: var(--madera2-trans);
+    color: var(--text-primary);
+    font-family: system-ui, sans-serif;
+}
+
+.presentacion-nombre {
+    margin: 0 0 0.5rem;
+    color: var(--line);
+    font-size: 0.875rem;
+    font-weight: 700;
+}
+
+.presentacion h1 {
+    margin: 0;
+    font: 700 clamp(2rem, 9vw, 3.5rem)/1.05 Georgia, serif;
+}
+
+.presentacion-descripcion {
+    margin: 1rem 0 1.25rem;
+    line-height: 1.55;
+}
+
+.presentacion-enlace {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-block-size: 2.75rem;
+    padding-inline: 1rem;
+    border-radius: 0.375rem;
+    background: var(--line);
+    color: var(--ink);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.presentacion-enlace:hover {
+    text-decoration: underline;
+}
+
+.presentacion-enlace:focus-visible {
+    outline: 2px solid var(--line);
+    outline-offset: 3px;
+}
+
+.presentacion-imagen {
+    display: block;
+    inline-size: 100%;
+    max-inline-size: 15rem;
+    block-size: auto;
+    justify-self: center;
+    border-radius: 0.625rem;
+}
+
+/*------------------ LISTA DE TRABAJOS ------------------*/
+#trabajos {
+    inline-size: min(32rem, 90%);
+    margin: 2rem auto;
+    color: var(--text-primary);
+}
+
+#trabajos-titulo {
+    margin: 0 0 1rem;
+    padding: 0.75rem 1rem;
+    border-inline-start: 3px solid var(--line);
+    background: var(--madera2-trans);
+    font: 700 1.75rem Georgia, serif;
+}
+
+#trabajos-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+}
+
+.trabajo {
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 0.625rem;
+    background: var(--madera2);
+    cursor: pointer;
+}
+
+.trabajo img {
+    display: block;
+    inline-size: 100%;
+    block-size: 100%;
+    object-fit: cover;
+}
+
+/*------------------ DIALOGO DE TRABAJOS ------------------*/
+
+.trabajo-dialog,
+.contacto-dialog {
+    background: transparent url("resource/Imagen/Fondo_de_Imagen.png") center / 100% 100% no-repeat;
+}
+
+.trabajo-dialog {
+    inline-size: min(92%, 40rem);
+    max-block-size: 90dvh;
+    box-sizing: border-box;
+    padding: clamp(1.25rem, 6vw, 2.75rem) clamp(1.5rem, 8vw, 4rem);
+    border: 0;
+    font-family: system-ui, sans-serif;
+    color: var(--text-primary);
+}
+
+.trabajo-dialog::backdrop {
+    background: rgb(0 0 0 / 0.5);
+}
+
+.trabajo-dialog-cabecera,
+.trabajo-controles {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: 0.75rem;
+}
+
+.trabajo-dialog-cabecera h2 {
+    margin: 0;
+    margin-inline-end: 2rem;
+    font: 700 1.7rem Roboto, serif;
+}
+.trabajo-contador {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+.trabajo-dialog-cabecera h2,
+.trabajo-contador {
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.375rem;
+}
+
+.trabajo-dialog-cabecera h2,
+.trabajo-contador,
+.trabajo-error,
+.contacto-dialog h2,
+#contacto-datos,
+#contacto-datos a,
+.wechat-qr figcaption,
+.wechat-id,
+.wechat-copiar,
+.wechat-estado {
+    color: var(--text-oscuro);
+    text-shadow:
+        -1px -1px 0 var(--text-primary),
+         1px -1px 0 var(--text-primary),
+        -1px  1px 0 var(--text-primary),
+         1px  1px 0 var(--text-primary);
+}
+
+.trabajo-foto-marco {
+    display: grid;
+    grid-template: minmax(0, 1fr) / minmax(0, 1fr);
+    place-items: center;
+    block-size: min(52dvh, 24rem);
+    margin-block: 0.75rem;
+}
+
+.trabajo-foto {
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 0;
+    object-fit: contain;
+    border-radius: 0.375rem;
+}
+
+.trabajo-error {
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    background: var(--madera2);
+    text-align: center;
+}
+
+.trabajo-cerrar,
+.contacto-cerrar {
+    position: absolute;
+    inset-block-start: 0.75rem;
+    inset-inline-end: 0.75rem;
+    display: grid;
+    place-items: center;
+}
+
+.trabajo-cerrar {
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    box-sizing: border-box;
+    padding: 0;
+    border: 2px solid var(--line);
+    border-radius: 50%;
+    background: var(--madera3);
+    color: var(--text-primary);
+    font: 700 1.75rem/1 system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.trabajo-cerrar:hover {
+    background: var(--madera2);
+}
+
+.trabajo-anterior, .trabajo-siguiente {
+    padding-inline: 0.75rem;
+    margin-bottom: 1.7rem;
+    border: 1px solid var(--line);
+    border-radius: 1rem;
+    background: var(--madera);
+    color: var(--text-primary);
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 2.5rem;
+}
+
+.trabajo:focus-visible,
+.trabajo-dialog button:focus-visible {
+    outline: 2px solid var(--line);
+    outline-offset: 3px;
+}
+
+/*------------------ CONTACTO ------------------*/
+
+.contacto {
+    inline-size: min(32rem, 90%);
+    justify-content:space-between;
+    margin: 2rem auto;
+    padding: clamp(0.875rem, 4vw, 1.5rem);
+    box-sizing: border-box;
+    border: 1px solid var(--line);
+    border-radius: 0.875rem;
+    background: var(--madera2-trans);
+    color: var(--text-primary);
+}
+
+.contacto h2,
+.contacto-dialog h2 {
+    margin: 0;
+    font: 700 1.75rem Georgia, serif;
+}
+
+.contacto-opciones {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin-block-start: 1rem;
+}
+
+.contacto-opcion {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    padding: 1rem 0.25rem;
+    border: 1px solid var(--line);
+    border-radius: 0.625rem;
+    background: var(--madera2);
+    color: var(--text-primary);
+    font: 700 0.9375rem system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.contacto-opcion:hover,
+.contacto-cerrar:hover {
+    background: var(--madera3);
+}
+
+.contacto-logo {
+    inline-size: 2.5rem;
+    block-size: 2.5rem;
+    color: #30db69;
+}
+
+.contacto-dialog {
+    inline-size: min(90%, 25rem);
+    box-sizing: border-box;
+    padding: clamp(1.5rem, 7vw, 2.25rem);
+    border: 0;
+    color: var(--text-primary);
+    font: 1rem/1.5 system-ui, sans-serif;
+}
+
+.contacto-dialog::backdrop {
+    background: rgb(0 0 0 / 50%);
+}
+
+.contacto-dialog-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding-inline-end: 2rem;
+}
+
+.contacto-cerrar {
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--madera);
+    color: inherit;
+    font: 700 1.75rem/1 system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.contacto-dialog h2,
+#contacto-datos,
+.wechat-qr figcaption,
+.wechat-id {
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.375rem;
+    background: transparent;
+}
+
+#contacto-datos {
+    margin-block-start: 0.75rem;
+    overflow-wrap: anywhere;
+}
+
+#contacto-datos ul {
+    display: grid;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+#contacto-datos a,
+.wechat-copiar {
+    display: flex;
+    align-items: center;
+    min-block-size: 2.75rem;
+    padding-inline: 0.875rem;
+    border-radius: 0.375rem;
+    background: var(--line);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.wechat-qr {
+    display: grid;
+    justify-items: center;
+    gap: 0.5rem;
+    margin: 0.75rem 0;
+    text-align: center;
+}
+
+.wechat-qr img {
+    display: block;
+    inline-size: min(100%, 12rem);
+    block-size: auto;
+    border-radius: 0.375rem;
+    background: var(--text-primary);
+}
+
+.wechat-id {
+    margin: 0;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+
+.wechat-id strong {
+    display: block;
+}
+
+.wechat-copiar {
+    justify-content: center;
+    margin: 0.75rem auto 0;
+    border: 0;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.wechat-estado {
+    margin: 0.5rem 0 0;
+    text-align: center;
+    border-radius: 0.375rem;
+    background: transparent;
+}
+
+.wechat-estado:empty {
+    margin: 0;
+}
+
+.contacto :focus-visible,
+.contacto-dialog :focus-visible {
+    outline: 2px solid var(--line);
+    outline-offset: 3px;
+}
+
+/*------------------ FOOTER ------------------*/
+
+.pie-pagina {
+    background-color: var(--madera2-trans);
+    color: #ffffff;
+    text-align: center;
+    padding: 25px 15px;
+    border-top: 2px solid #d99a32;
+    font-size: 14px;
+}
+
+.pie-pagina p {
+    margin: 8px 0;
+}
+
+.pie-pagina a {
+    color: #ffbf47;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.pie-pagina a:hover {
+    color: rgb(60, 60, 255);
+    text-decoration: underline;
+}
+
+/*------------------ TABLETS Y COMPUTADORAS ------------------*/
+
+@media (min-width: 48rem) {
+    .header-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.5rem;
+        inline-size: min(90%, 72rem);
+        padding-inline: 0;
+    }
+
+    .brand img {
+        inline-size: clamp(8rem, 14vw, 11rem);
+    }
+
+    .menu-toggle {
+        display: none;
+    }
+
+    .header-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(0.5rem, 2vw, 1.5rem);
+        padding-block: 0;
+        border-top: 0;
+    }
+
+    .header-nav a {
+        gap: 0.5rem;
+        font-size: clamp(1.0625rem, 1.6vw, 1.25rem);
+    }
+
+    .presentacion,
+    #trabajos,
+    .contacto {
+        inline-size: min(90%, 72rem);
+        margin-block: 2.5rem;
+    }
+
+    .presentacion {
+        grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+        align-items: center;
+        gap: clamp(1.5rem, 4vw, 4rem);
+        padding: clamp(2rem, 5vw, 4rem);
+    }
+
+    .presentacion h1 {
+        font-size: clamp(2.75rem, 5vw, 4.5rem);
+    }
+
+    .presentacion-descripcion {
+        max-inline-size: 44ch;
+        font-size: 1.125rem;
+    }
+
+    .presentacion-imagen {
+        max-inline-size: 22rem;
+    }
+
+    #trabajos-list {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+    }
+
+    .contacto {
+        padding: 1.5rem 2rem;
+    }
+
+    .contacto-opciones {
+        gap: clamp(1rem, 3vw, 2rem);
+    }
+
+    .contacto-opcion {
+        padding-block: 1.25rem;
+    }
+
+    .trabajo-dialog {
+        inline-size: min(88%, 48rem);
+    }
+
+    .trabajo-foto-marco {
+        block-size: min(50dvh, 25rem);
+    }
+
+    .pie-pagina {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.375rem 1.5rem;
+        margin-block-start: auto;
+    }
+}
+
+@media (min-width: 72rem) {
+    #trabajos-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}

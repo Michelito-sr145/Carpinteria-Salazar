@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Carpintería Salazar | Trabajos a Medida, madera, melamina, Durlock y cielo raso. Conocé nuestros trabajos y consultá por WhatsApp.">
+    <meta name="theme-color" content="#211e19">
+    <title>Carpintería Salazar | Trabajos a Medida</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="resource/Logo/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resource/Logo/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resource/Logo/favicon-16x16.png">
+    <link rel="manifest" href="resource/Logo/site.webmanifest">
+    <link rel="icon" href="resource/Imagen/Logotipo.png">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <div class="header-bar">
+                <a class="brand" href="#presentacion">
+                    <img src="resource/Imagen/Logotipo.png" alt="Logo Ángel Salazar" class="brand-logo">
+                </a>
+                <button class="menu-toggle" id="menu" type="button" aria-expanded="false"
+                    aria-controls="navigation" hidden>
+                    <span class="menu-icon" aria-hidden="true"></span>
+                    Menú
+                </button>
+            </div>
+            <nav class="header-nav" id="navigation" aria-label="Navegación principal">
+                <a href="#presentacion">Inicio</a>
+                <a href="#trabajos">Trabajos</a>
+                <a class="nav-contact" href="#contacto">Contacto <span aria-hidden="true">↗</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="presentacion" id="presentacion" aria-labelledby="presentacion-titulo">
+            <div class="presentacion-contenido">
+                <p class="presentacion-nombre">Ángel Salazar</p>
+                <h1 id="presentacion-titulo">Carpintería a medida</h1>
+                <p class="presentacion-descripcion">
+                    Hacemos muebles a medida en madera y melamina. También realizamos trabajos
+                    en Durlock y cielos rasos.
+                </p>
+                <a class="presentacion-enlace" href="#trabajos">Ver trabajos <span aria-hidden="true">↓</span></a>
+            </div>
+            <img class="presentacion-imagen" src="resource/Imagen/Carpintero.png" alt="" width="474" height="474">
+        </section>
+        <section id="trabajos" aria-labelledby="trabajos-titulo">
+            <h2 id="trabajos-titulo">Trabajos</h2>
+            <div id="trabajos-container">
+                <div id="trabajos-list">
+                    <button type="button" id="Work1" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 1"></button>
+                    <button type="button" id="Work2" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 2"></button>
+                    <button type="button" id="Work3" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 3"></button>
+                    <button type="button" id="Work4" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 4"></button>
+                    <button type="button" id="Work5" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 5"></button>
+                    <button type="button" id="Work6" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 6"></button>
+                    <button type="button" id="Work7" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 7"></button>
+                    <button type="button" id="Work8" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 8"></button>
+                    <button type="button" id="Work9" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 9"></button>
+                    <button type="button" id="WorkEtc" class="trabajo" aria-haspopup="dialog" aria-label="Otros trabajos"></button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto" aria-labelledby="contacto-titulo">
+            <h2 id="contacto-titulo">Contacto</h2>
+            <div class="contacto-opciones">
+                <button class="contacto-opcion" type="button"
+                    aria-haspopup="dialog" aria-controls="contacto-dialog-whatsapp">
+                    <svg class="contacto-logo" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M12 2a10 10 0 0 0-8.7 15L2 22l5.1-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.6-1.5l-2.6.7.7-2.6A8 8 0 1 1 12 20Z"/>
+                        <path fill="currentColor" d="M9 7.5c-.7-.2-1.6.4-1.6 1.6 0 2.9 4.6 7.5 7.5 7.5 1.2 0 1.8-.9 1.6-1.6l-2.6-1.4-.9 1c-1.7-.8-2.8-1.9-3.6-3.6l1-.9L9 7.5Z"/>
+                    </svg>
+                    <span>WhatsApp</span>
+                </button>
+                <button class="contacto-opcion" type="button"
+                    aria-haspopup="dialog" aria-controls="contacto-dialog-wechat">
+                    <svg class="contacto-logo" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill="currentColor" d="M9 2C4.6 2 1 5 1 8.7c0 2 1.1 3.8 2.8 5.1L3 16l3-1.2c.9.3 1.9.5 3 .5h.4a6.2 6.2 0 0 1-.3-1.9c0-3.5 3.1-6.4 7-6.6C15.1 4 12.4 2 9 2ZM6.3 7.8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Zm5.4 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"/>
+                        <path fill="currentColor" d="M16.5 8C12.9 8 10 10.4 10 13.4s2.9 5.5 6.5 5.5c.8 0 1.6-.1 2.3-.4l2.5 1-.7-2c1.5-1 2.4-2.5 2.4-4.1 0-3-2.9-5.4-6.5-5.4Zm-2.2 4.8a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Zm4.4 0a.8.8 0 1 1 0-1.6.8.8 0 0 1 0 1.6Z"/>
+                    </svg>
+                    <span>WeChat</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <dialog id="WorkDialog" class="trabajo-dialog" aria-labelledby="trabajo-titulo">
+        <div class="trabajo-dialog-cabecera">
+            <h2 id="trabajo-titulo"></h2>
+            <form method="dialog">
+                <button class="trabajo-cerrar" type="submit" aria-label="Cerrar galería" autofocus>×</button>
+            </form>
+        </div>
+        <div class="trabajo-foto-marco">
+            <img class="trabajo-foto" alt="" hidden>
+            <p class="trabajo-error" role="status" hidden>No se pudo cargar esta foto.</p>
+        </div>
+        <div class="trabajo-controles">
+            <button class="trabajo-anterior" type="button" aria-label="Foto anterior">‹</button>
+            <span class="trabajo-contador" aria-live="polite" aria-atomic="true"></span>
+            <button class="trabajo-siguiente" type="button" aria-label="Foto siguiente">›</button>
+        </div>
+    </dialog>
+    <dialog id="contacto-dialog-whatsapp" class="contacto-dialog" aria-labelledby="contacto-whatsapp-titulo">
+        <div class="contacto-dialog-cabecera">
+            <h2 id="contacto-whatsapp-titulo">WhatsApp</h2>
+            <form method="dialog">
+                <button class="contacto-cerrar" type="submit" aria-label="Cerrar contacto" autofocus>×</button>
+            </form>
+        </div>
+        <div id="contacto-datos"></div>
+    </dialog>
+    <dialog id="contacto-dialog-wechat" class="contacto-dialog" aria-labelledby="contacto-wechat-titulo">
+        <div class="contacto-dialog-cabecera">
+            <h2 id="contacto-wechat-titulo">Angel Salazar</h2>
+            <form method="dialog">
+                <button class="contacto-cerrar" type="submit" aria-label="Cerrar contacto" autofocus>×</button>
+            </form>
+        </div>
+        <figure class="wechat-qr">
+            <img src="resource/Imagen/QR_WeChat.png" alt="" width="474" height="474">
+        </figure>
+        <p class="wechat-id">ID de WeChat <strong id="wechat-id-valor">wxid_jdismbrd8vnh22</strong></p>
+        <button id="wechat-copiar" class="wechat-copiar" type="button">Copiar ID</button>
+        <p id="wechat-estado" class="wechat-estado" role="status"></p>
+    </dialog>
+
+    <footer class="pie-pagina">
+        <p>© 2026 Carpintería Salazar. Todos los derechos reservados.</p>
+        <p>
+            Desarrollado por
+            <a href="https://michelsalazar.dev"
+               target="_blank"
+               rel="noopener noreferrer">
+                Michel.sr
+            </a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
