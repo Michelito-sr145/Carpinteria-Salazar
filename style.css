@@ -1,4 +1,4 @@
-﻿:root{
+:root{
     --ink: #282019;
     --paper: rgba(179, 154, 127, 0.5);
     --line: #ffd035;
@@ -21,7 +21,7 @@ body {
     margin: 0;
     min-height: 100vh;
     background-color: #2b140900;
-    background-image: url("resource/Imagen/Fondo_de_Pagina.png");
+    background-image: url("resource/Imagen/Fondo_de_Pagina.avif");
     background-position: center top;
     background-size: 100% auto;
     background-repeat: repeat-y;
@@ -229,9 +229,8 @@ body {
 
 /*------------------ DIALOGO DE TRABAJOS ------------------*/
 
-.trabajo-dialog,
-.contacto-dialog {
-    background: transparent url("resource/Imagen/Fondo_de_Imagen.png") center / 100% 100% no-repeat;
+.trabajo-dialog {
+    background: transparent url("resource/Imagen/Fondo_de_Imagen.webp") center / 100% 100% no-repeat;
 }
 
 .trabajo-dialog {
@@ -358,6 +357,9 @@ body {
 }
 
 /*------------------ CONTACTO ------------------*/
+.contacto-dialog {
+    background: transparent url("resource/Imagen/Fondo_de_Trablon.webp") center / 100% 100% no-repeat;
+}
 
 .contacto {
     inline-size: min(32rem, 90%);
@@ -648,7 +650,44 @@ body {
 }
 
 @media (min-width: 72rem) {
+    .trabajo-dialog {
+        background: transparent url("resource/Imagen/Fondo_de_Trablon.webp") center / 100% 100% no-repeat;
+    }
     #trabajos-list {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 }
+
+/* Fotos y videos dentro de las mismas galerias. */
+.trabajo { position: relative; }
+.trabajo-medios {
+    position: absolute;
+    inset-inline: .5rem;
+    inset-block-end: .5rem;
+    padding: .35rem .65rem;
+    border-radius: .4rem;
+    background: rgb(20 16 12 / .85);
+    color: #fff;
+    font: 600 .75rem/1.5 system-ui, sans-serif;
+    pointer-events: none;
+}
+.trabajo-video-portada {
+    display: grid;
+    place-items: center;
+    inline-size: 100%;
+    block-size: 100%;
+    background: linear-gradient(135deg, #493324, #201b16);
+    color: #edc482;
+    font: 3rem/1 system-ui, sans-serif;
+}
+.trabajo-video {
+    inline-size: 100%;
+    block-size: 100%;
+    min-block-size: 0;
+    object-fit: contain;
+    border-radius: .375rem;
+    background: #15120f;
+}
+.trabajo-foto[hidden], .trabajo-video[hidden], .trabajo-error[hidden] { display: none; }
+.trabajo-contador { font-size: clamp(.85rem, 3vw, 1.15rem); text-align: center; }
+.trabajo-anterior:disabled, .trabajo-siguiente:disabled { opacity: .4; cursor: default; }

@@ -12,17 +12,16 @@
     <link rel="icon" type="image/png" sizes="32x32" href="resource/Logo/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="resource/Logo/favicon-16x16.png">
     <link rel="manifest" href="resource/Logo/site.webmanifest">
-    <link rel="icon" href="resource/Imagen/Logotipo.png">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-
+    
 <body>
     <header class="header">
         <div class="header-inner">
             <div class="header-bar">
                 <a class="brand" href="#presentacion">
-                    <img src="resource/Imagen/Logotipo.png" alt="Logo Ángel Salazar" class="brand-logo">
+                    <img src="resource/Imagen/Logotipo.webp" alt="Logo Ángel Salazar" class="brand-logo">
                 </a>
                 <button class="menu-toggle" id="menu" type="button" aria-expanded="false"
                     aria-controls="navigation" hidden>
@@ -49,10 +48,10 @@
                 </p>
                 <a class="presentacion-enlace" href="#trabajos">Ver trabajos <span aria-hidden="true">↓</span></a>
             </div>
-            <img class="presentacion-imagen" src="resource/Imagen/Carpintero.png" alt="" width="474" height="474">
+            <img class="presentacion-imagen" src="resource/Imagen/Carpintero.webp" alt="" width="474" height="474">
         </section>
         <section id="trabajos" aria-labelledby="trabajos-titulo">
-            <h2 id="trabajos-titulo">Trabajos</h2>
+            <h2 id="trabajos-titulo">Fotos y videos de trabajos</h2>
             <div id="trabajos-container">
                 <div id="trabajos-list">
                     <button type="button" id="Work1" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 1"></button>
@@ -64,7 +63,11 @@
                     <button type="button" id="Work7" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 7"></button>
                     <button type="button" id="Work8" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 8"></button>
                     <button type="button" id="Work9" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 9"></button>
-                    <button type="button" id="WorkEtc" class="trabajo" aria-haspopup="dialog" aria-label="Otros trabajos"></button>
+                    <button type="button" id="Work10" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 10"></button>
+                    <button type="button" id="Work11" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 11"></button>
+                    <button type="button" id="Work12" class="trabajo" aria-haspopup="dialog" aria-label="Trabajo 12"></button>
+                    <button type="button" id="WorkImagenes" class="trabajo" aria-haspopup="dialog" aria-label="Otros trabajos"></button>
+                    <button type="button" id="WorkVideos" class="trabajo" aria-haspopup="dialog" aria-label="Otros trabajos en video"></button>
                 </div>
             </div>
         </section>
@@ -102,12 +105,13 @@
         </div>
         <div class="trabajo-foto-marco">
             <img class="trabajo-foto" alt="" hidden>
-            <p class="trabajo-error" role="status" hidden>No se pudo cargar esta foto.</p>
+            <video class="trabajo-video" controls playsinline preload="metadata" hidden></video>
+            <p class="trabajo-error" role="status" hidden>No se pudo cargar este archivo. Probá con el siguiente.</p>
         </div>
         <div class="trabajo-controles">
-            <button class="trabajo-anterior" type="button" aria-label="Foto anterior">‹</button>
+            <button class="trabajo-anterior" type="button" aria-label="Foto o video anterior">‹</button>
             <span class="trabajo-contador" aria-live="polite" aria-atomic="true"></span>
-            <button class="trabajo-siguiente" type="button" aria-label="Foto siguiente">›</button>
+            <button class="trabajo-siguiente" type="button" aria-label="Foto o video siguiente">›</button>
         </div>
     </dialog>
     <dialog id="contacto-dialog-whatsapp" class="contacto-dialog" aria-labelledby="contacto-whatsapp-titulo">
@@ -127,7 +131,7 @@
             </form>
         </div>
         <figure class="wechat-qr">
-            <img src="resource/Imagen/QR_WeChat.png" alt="" width="474" height="474">
+            <img src="resource/Imagen/QR_WeChat.avif" alt="" width="474" height="474">
         </figure>
         <p class="wechat-id">ID de WeChat <strong id="wechat-id-valor">wxid_jdismbrd8vnh22</strong></p>
         <button id="wechat-copiar" class="wechat-copiar" type="button">Copiar ID</button>

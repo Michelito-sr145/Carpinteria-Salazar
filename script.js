@@ -1,4 +1,4 @@
-﻿const menuToggle = document.querySelector('#menu');
+const menuToggle = document.querySelector('#menu');
 const navigation = document.querySelector('#navigation');
 const navegacionAmplia = window.matchMedia('(min-width: 48rem)');
 
@@ -42,172 +42,564 @@ menuToggle.closest('header').addEventListener('keydown', (event) => {
     }
 });
 
-// Inventario para servir la galería desde archivos estáticos.
-const fotosPorTrabajo = {
-    Work1: [
-        'Trabajo1-img (1).jpg',
-        'Trabajo1-img (2).jpg',
-        'Trabajo1-img (3).jpg',
-        'Trabajo1-img (4).jpg',
-        'Trabajo1-img (5).jpg',
-        'Trabajo1-img (6).jpg',
-        'Trabajo1-img (7).jpg',
+// Inventario de fotos y videos de cada trabajo.
+const mediosPorTrabajo = {
+    "Work1": [
+        {
+            "archivo": "Trabajo1-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img4.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img5.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img6.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo1-img7.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work2: [
-        'Trabajo2-img (1).jpg',
-        'Trabajo2-img (2).jpg',
-        'Trabajo2-img (3).jpg',
-        'Trabajo2-img (4).jpg',
-        'Trabajo2-img (5).jpg',
-        'Trabajo2-img (6).jpg',
-        'Trabajo2-img (7).jpg',
-        'Trabajo2-img (8).jpg',
-        'Trabajo2-img (9).jpg',
+    "Work2": [
+        {
+            "archivo": "Trabajo2-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo2-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-video2.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo2-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-video3.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo2-img4.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-img5.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-img6.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-img7.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-img8.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo2-img9.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work3: [
-        'Trabajo3-img (1).jpg',
-        'Trabajo3-img (2).jpg',
-        'Trabajo3-img (3).jpg',
-        'Trabajo3-img (4).jpg',
+    "Work3": [
+        {
+            "archivo": "Trabajo3-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo3-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo3-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo3-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo3-img4.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work4: [
-        'Trabajo4-img (1).jpg',
-        'Trabajo4-img (2).jpg',
-        'Trabajo4-img (3).jpg',
-        'Trabajo4-img (4).jpg',
-        'Trabajo4-img (5).jpg',
-        'Trabajo4-img (6).jpg',
-        'Trabajo4-img (7).jpg',
-        'Trabajo4-img (8).jpg',
-        'Trabajo4-img (9).jpg',
-        'Trabajo4-img (10).jpg',
-        'Trabajo4-img (11).jpg',
-        'Trabajo4-img (12).jpg',
+    "Work4": [
+        {
+            "archivo": "Trabajo4-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo4-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-video2.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo4-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img4.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img5.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img6.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img7.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img8.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img9.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img10.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo4-img11.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work5: [
-        'Trabajo5-img (1).jpg',
-        'Trabajo5-img (2).jpg',
+    "Work5": [
+        {
+            "archivo": "Trabajo5-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo5-img2.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work6: [
-        'Trabajo6-img (1).jpg',
-        'Trabajo6-img (2).jpg',
-        'Trabajo6-img (3).jpg',
-        'Trabajo6-img (4).jpg',
-        'Trabajo6-img (5).jpg',
-        'Trabajo6-img (6).jpg',
-        'Trabajo6-img (7).jpg',
-        'Trabajo6-img (8).jpg',
-        'Trabajo6-img (9).jpg',
-        'Trabajo6-img (10).jpg',
-        'Trabajo6-img (11).jpg',
-        'Trabajo6-img (12).jpg',
-        'Trabajo6-img (13).jpg',
-        'Trabajo6-img (14).jpg',
-        'Trabajo6-img (15).jpg',
-        'Trabajo6-img (16).jpg',
-        'Trabajo6-img (17).jpg',
-        'Trabajo6-img (18).jpg',
-        'Trabajo6-img (19).jpg',
-        'Trabajo6-img (20).jpg',
-        'Trabajo6-img (21).jpg',
-        'Trabajo6-img (22).jpg',
-        'Trabajo6-img (23).jpeg',
-        'Trabajo6-img (24).jpeg',
+    "Work6": [
+        {
+            "archivo": "Trabajo6-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img4.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img5.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img6.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img7.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img8.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img9.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img10.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img11.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img12.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img13.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img14.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img15.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img16.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img17.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo6-img18.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work7: [
-        'Trabajo7-img (1).jpeg',
-        'Trabajo7-img (2).jpeg',
+    "Work7": [
+        {
+            "archivo": "Trabajo7-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo7-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo7-img2.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work8: [
-        'Trabajo8-img (1).jpeg',
-        'Trabajo8-img (2).jpeg',
+    "Work8": [
+        {
+            "archivo": "Trabajo8-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo8-img2.avif",
+            "tipo": "imagen"
+        }
     ],
-    Work9: [
-        'Trabajo9-img (1).jpeg',
-        'Trabajo9-img (2).jpeg',
-        'Trabajo9-img (3).jpeg',
-        'Trabajo9-img (4).jpeg',
+    "Work9": [
+        {
+            "archivo": "Trabajo9-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo9-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo9-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Trabajo9-img4.avif",
+            "tipo": "imagen"
+        }
     ],
-    WorkEtc: [
-        'Etc-img (1).jpeg',
-        'Etc-img (11).jpeg',
-        'Etc-img (12).jpeg',
-        'Etc-img (13).jpeg',
-        'Etc-img (14).jpeg',
-        'Etc-img (15).jpeg',
-        'Etc-img (16).jpeg',
-        'Etc-img (17).jpeg',
-        'Etc-img (18).jpeg',
-        'Etc-img (19).jpeg',
-        'Etc-img (20).jpeg',
-        'Etc-img (21).jpeg',
-        'Etc-img (22).jpeg',
-        'Etc-img (23).jpeg',
+    "Work10": [
+        {
+            "archivo": "Trabajo10-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo10-video2.mp4",
+            "tipo": "video"
+        }
     ],
+    "Work11": [
+        {
+            "archivo": "Trabajo11-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo11-video2.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo11-video3.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo11-video4.mp4",
+            "tipo": "video"
+        }
+    ],
+    "Work12": [
+        {
+            "archivo": "Trabajo12-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo12-video2.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Trabajo12-video3.mp4",
+            "tipo": "video"
+        }
+    ],
+    "WorkImagenes": [
+        {
+            "archivo": "Etc-img1.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img2.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img3.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img4.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img5.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img6.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img7.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img8.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img9.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img10.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img11.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img12.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img13.avif",
+            "tipo": "imagen"
+        },
+        {
+            "archivo": "Etc-img14.avif",
+            "tipo": "imagen"
+        }
+    ],
+    "WorkVideos": [
+        {
+            "archivo": "Etc-video1.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video2.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video3.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video4.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video5.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video6.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video7.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video8.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video9.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video10.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video11.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video12.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video13.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video14.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video15.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video16.mp4",
+            "tipo": "video"
+        },
+        {
+            "archivo": "Etc-video17.mp4",
+            "tipo": "video"
+        }
+    ]
 };
+
 
 const tarjetasTrabajo = document.querySelectorAll('#trabajos-list .trabajo');
 const trabajoDialog = document.querySelector('#WorkDialog');
 const trabajoTitulo = trabajoDialog.querySelector('#trabajo-titulo');
 const trabajoFoto = trabajoDialog.querySelector('.trabajo-foto');
+const trabajoVideo = trabajoDialog.querySelector('.trabajo-video');
 const trabajoError = trabajoDialog.querySelector('.trabajo-error');
 const trabajoContador = trabajoDialog.querySelector('.trabajo-contador');
 const fotoAnterior = trabajoDialog.querySelector('.trabajo-anterior');
 const fotoSiguiente = trabajoDialog.querySelector('.trabajo-siguiente');
 let trabajoActivo;
-let indiceFoto = 0;
-
-function rutaFotoTrabajo(id, indice) {
-    return `resource/${id}/${encodeURIComponent(fotosPorTrabajo[id][indice])}`;
+let indiceMedio = 0;
+let tipoActivo;
+function rutaMedioTrabajo(id, medio) {
+    return `resource/${id}/${encodeURIComponent(medio.archivo)}`;
 }
-
-function mostrarFoto(desplazamiento) {
-    const fotos = fotosPorTrabajo[trabajoActivo.id];
-    indiceFoto = (indiceFoto + desplazamiento + fotos.length) % fotos.length;
-
-    trabajoError.hidden = true;
+function detenerVideo() {
+    trabajoVideo.pause();
+    trabajoVideo.hidden = true;
+    trabajoVideo.removeAttribute('src');
+    trabajoVideo.load();
+}
+function mostrarMedio(desplazamiento) {
+    const medios = mediosPorTrabajo[trabajoActivo.id];
+    indiceMedio = (indiceMedio + desplazamiento + medios.length) % medios.length;
+    const medio = medios[indiceMedio];
+    tipoActivo = medio.tipo;
+    detenerVideo();
     trabajoFoto.hidden = true;
-    trabajoFoto.alt = `${trabajoTitulo.textContent}, foto ${indiceFoto + 1}`;
-    trabajoFoto.src = rutaFotoTrabajo(trabajoActivo.id, indiceFoto);
-    if (trabajoFoto.complete && trabajoFoto.naturalWidth > 0) {
-        trabajoFoto.hidden = false;
+    trabajoFoto.removeAttribute('src');
+    trabajoError.hidden = true;
+    const ruta = rutaMedioTrabajo(trabajoActivo.id, medio);
+    if (medio.tipo === 'video') {
+        trabajoVideo.setAttribute('aria-label', `${trabajoTitulo.textContent}, video ${indiceMedio + 1}`);
+        trabajoVideo.src = ruta;
+        trabajoVideo.hidden = false;
+    } else {
+        trabajoFoto.alt = `${trabajoTitulo.textContent}, foto ${indiceMedio + 1}`;
+        trabajoFoto.src = ruta;
+        if (trabajoFoto.complete && trabajoFoto.naturalWidth > 0) trabajoFoto.hidden = false;
     }
-    trabajoContador.textContent = `${indiceFoto + 1} de ${fotos.length}`;
+    trabajoContador.textContent = `${medio.tipo === 'video' ? 'Video' : 'Foto'} ${indiceMedio + 1} de ${medios.length}`;
+    fotoAnterior.disabled = fotoSiguiente.disabled = medios.length < 2;
 }
-
 trabajoFoto.addEventListener('load', () => {
+    if (tipoActivo !== 'imagen' || !trabajoDialog.open) return;
     trabajoFoto.hidden = false;
     trabajoError.hidden = true;
 });
-
 trabajoFoto.addEventListener('error', () => {
+    if (tipoActivo !== 'imagen' || !trabajoFoto.hasAttribute('src')) return;
     trabajoFoto.hidden = true;
     trabajoError.hidden = false;
 });
-
+trabajoVideo.addEventListener('error', () => {
+    if (tipoActivo !== 'video' || !trabajoVideo.hasAttribute('src')) return;
+    trabajoVideo.hidden = true;
+    trabajoError.hidden = false;
+});
 tarjetasTrabajo.forEach((tarjeta) => {
-    const miniatura = document.createElement('img');
-    miniatura.alt = '';
-    miniatura.loading = 'lazy';
-    miniatura.src = rutaFotoTrabajo(tarjeta.id, 0);
-    tarjeta.append(miniatura);
-
+    const medios = mediosPorTrabajo[tarjeta.id] || [];
+    if (!medios.length) { tarjeta.hidden = true; return; }
+    const fotos = medios.filter(medio => medio.tipo === 'imagen');
+    const videos = medios.filter(medio => medio.tipo === 'video');
+    if (fotos.length) {
+        const miniatura = document.createElement('img');
+        miniatura.alt = '';
+        miniatura.loading = 'lazy';
+        miniatura.src = rutaMedioTrabajo(tarjeta.id, fotos[0]);
+        tarjeta.append(miniatura);
+    } else {
+        // No descargar los videos para generar las portadas de las tarjetas.
+        const portada = document.createElement('span');
+        portada.className = 'trabajo-video-portada';
+        portada.textContent = '▶';
+        portada.setAttribute('aria-hidden', 'true');
+        tarjeta.append(portada);
+    }
+    const resumen = [fotos.length ? `${fotos.length} fotos` : '', videos.length ? `${videos.length} videos` : ''].filter(Boolean).join(' + ');
+    const etiqueta = document.createElement('span');
+    etiqueta.className = 'trabajo-medios';
+    etiqueta.textContent = resumen;
+    etiqueta.setAttribute('aria-hidden', 'true');
+    tarjeta.append(etiqueta);
+    const titulo = tarjeta.getAttribute('aria-label');
+    tarjeta.setAttribute('aria-label', `${titulo}: ${resumen}`);
     tarjeta.addEventListener('click', () => {
         trabajoActivo = tarjeta;
-        indiceFoto = 0;
-        trabajoTitulo.textContent = tarjeta.getAttribute('aria-label');
-        mostrarFoto(0);
+        indiceMedio = 0;
+        trabajoTitulo.textContent = titulo;
         trabajoDialog.showModal();
+        mostrarMedio(0);
     });
 });
-
-fotoAnterior.addEventListener('click', () => mostrarFoto(-1));
-fotoSiguiente.addEventListener('click', () => mostrarFoto(1));
-
+fotoAnterior.addEventListener('click', () => mostrarMedio(-1));
+fotoSiguiente.addEventListener('click', () => mostrarMedio(1));
 trabajoDialog.addEventListener('keydown', (event) => {
+    // Las flechas del reproductor siguen controlando el volumen y la reproduccion.
+    if (event.target.closest('video')) return;
     if (event.key === 'ArrowLeft' || event.key === 'ArrowRight') {
         event.preventDefault();
-        mostrarFoto(event.key === 'ArrowLeft' ? -1 : 1);
+        mostrarMedio(event.key === 'ArrowLeft' ? -1 : 1);
     }
 });
 
@@ -234,9 +626,13 @@ trabajoDialog.addEventListener('click', (event) => {
     pulsacionIniciadaFuera = false;
 });
 
-trabajoDialog.addEventListener('close', () => trabajoActivo.focus());
+trabajoDialog.addEventListener('close', () => {
+    tipoActivo = null;
+    detenerVideo();
+    trabajoActivo?.focus();
+});
 
-const numerosWhatsApp = ['+5491167623090', '+5491167623092'];
+const numerosWhatsApp = ['+5491140829550', '+5491169317315'];
 const contactoDatos = document.querySelector('#contacto-datos');
 const listaWhatsApp = document.createElement('ul');
 
